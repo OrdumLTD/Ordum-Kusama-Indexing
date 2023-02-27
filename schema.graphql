@@ -1,0 +1,47 @@
+# All the relations are pending, only presenting idividual entities.
+# As the relations will define how GraphQl will be and I dont have graphql experience.
+# We are only focused on spend proposals.
+# You can change the existing relations proposed by ( Mrisho Lukamba)
+
+
+
+type AccountProfile @entity {
+  id:ID! @index
+  amountEndowed: BigInt! @index
+ # proposals: [ProposalProfile] @derivedFrom(field: "id")
+  #events: [AccountEvents]
+}
+
+type ProposalProfile @entity {
+  id: ID! @index #hash
+  amountRequested: BigInt @index
+  dateCreated: DateTime!
+  description: String
+ # track: ReferendaTrack @derivedFrom(field: "amount")
+  preimage: BigInt @index
+  account: ID!
+}
+
+type ProposalStatus @entity {
+  id: ID! @index
+  cancelled: Boolean
+  approved: Boolean
+  killed: Boolean
+  confirmed: Boolean
+  inConfirmation: Boolean
+  approving: Boolean
+}
+
+#Events entity to be discussed
+
+
+# ----
+
+
+
+type ReferendaTrack @entity {
+  track: BigInt @index
+  amount:  BigInt
+  decisionPeriod: Int
+  confirmationPeriod:Int
+}

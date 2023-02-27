@@ -1,0 +1,68 @@
+{
+  "outDir": "src/types",
+  "specVersions": "https://kusama.archive.subsquid.io/graphql",
+  "events": [
+    "Balances.Transfer",
+
+
+    "Treasury.Proposed",
+    "Treasury.Spending",
+    "Treasury.Awarded",
+    "Treasury.Rejected",
+    "Treasury.SpendApproved",
+
+
+    "Referenda.Submitted",
+    "Referenda.DecisionDepositPlaced",
+    "Referenda.DecisionStarted",
+    "Referenda.Confirmed",
+    "Referenda.Approved",
+    "Referenda.Rejected",
+    "Referenda.Cancelled",
+    "Referenda.SubmissionDepositRefunded",
+
+
+    "Preimage.Noted",
+    "Preimage.Requested",
+    "Preimage.Cleared"
+
+  ],
+  "calls": [ 
+
+    "Balances.transfer_keep_alive",
+    
+
+    "Treasury.propose_spend",
+    "Treasury.reject_proposal",
+    "Treasury.approve_proposal",
+
+
+    "Referenda.submit",
+    "Referenda.place_decision_deposit",
+    "Referenda.refund_decision_deposit",
+    "Referenda.cancel",
+    "Referenda.kill",
+    "Referenda.refund_submission_deposit",
+
+
+    "Preimage.note_preimage",
+    "Preimage.request_preimage"
+
+  ],
+  "storage": [
+
+    "Balances.Account",
+
+
+    "Treasury.Proposals",
+    "Treasury.Approvals",
+
+
+    "Referenda.ReferendumInfoFor",
+    "Referenda.TrackQueue",
+    
+
+    "Preimage.StatusFor",
+    "Preimage.PreimageFor"
+  ]
+}
